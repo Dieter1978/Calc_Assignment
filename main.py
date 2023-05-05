@@ -1,11 +1,14 @@
 from calc_interface import addition, subtraction, multiplication, division, squared, cubed, power, simple, compound
 from colored import fg,bg, attr
 from datetime import datetime
+import sys
+from pathvalidate import ValidationError, validate_filename
 
 now = datetime.now()
 
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
+namefile = ""
 
 choices = [ (1,'addition'),
             (2,'subtraction'),
@@ -36,6 +39,15 @@ try:
 
         
         try:    
+            if not namefile:
+                filename = input("Would you like to write to a file y/n?")
+                if filename == "y":
+                        filename = input("Enter filename : ")
+                        validate_filename(filename)
+                        namefile = True
+                elif filename == "n":
+                        namefile = False       
+                
             choice =  input(f"{fg('white')}{bg('yellow')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
         
             if choice.lower() == 'q': raise KeyboardInterrupt
@@ -46,12 +58,13 @@ try:
 
             if c > 9: raise ValueError("Selected item not on menu")
 
-              
-            globals()[choices[c-1][1]]()
-            input("Press a key to continue...")
+            with open(f'{filename}', 'a') as f:  
+                globals()[choices[c-1][1]](f)
+                input("Press a key to continue...")
 
         except ValueError as e:
             print("Invalid input " + str(e))
+            
 
 
      
