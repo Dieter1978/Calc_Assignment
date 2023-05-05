@@ -1,5 +1,10 @@
 from calc_interface import addition, subtraction, multiplication, division, squared, cubed, power, simple, compound
 from colored import fg,bg, attr
+from datetime import datetime
+
+now = datetime.now()
+
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
 choices = [ (1,'addition'),
@@ -17,7 +22,7 @@ choices = [ (1,'addition'),
 try:
     while True:
         print(f"{fg('white')}{bg('yellow')}**** Welcome to Calcy the Calculator.****{attr('reset')}")
-        print(f"{fg('red')}#########################################{attr('reset')}")
+        print(f"{fg('red')}###########{dt_string}###########{attr('reset')}")
         print("1. Addition")
         print("2. Subtraction")
         print("3. Multiplication")
