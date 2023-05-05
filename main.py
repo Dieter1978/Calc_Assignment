@@ -64,6 +64,7 @@ try:
 
         except ValueError as e:
             print("Invalid input " + str(e))
+            input("Press a key to continue...")
             
 
 
