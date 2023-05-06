@@ -1,5 +1,5 @@
 
-
+import calculator
 from colored import fg,bg, attr
 from fibonacci import Fibonacci
 from game import Game
@@ -10,56 +10,56 @@ a_game = Game()
 
 def addition(f):
         print("**add**")
-        a = int(input("--> "))
-        b = int(input("+   "))
+        a = float(input("--> "))
+        b = float(input("+   "))
         print(f"{fg('blue')}{calculator.add(a, b)}{attr('reset')}")
         print(f"{a} + {b} = {calculator.add(a, b)}",file=f)
 
 def subtraction(f):
         print("**subtract**")
-        a = int(input("--> "))
-        b = int(input("-   "))
+        a = float(input("--> "))
+        b = float(input("-   "))
         print(f"{fg('blue')}{calculator.subtract(a, b)}{attr('reset')}")
         print(f"{a} - {b} = {calculator.subtract(a, b)}",file=f)
 
 def multiplication(f):
         print("**multiply**")
-        a = int(input("--> "))
-        b = int(input("*   "))
+        a = float(input("--> "))
+        b = float(input("*   "))
         print(f"{fg('blue')}{calculator.multiply(a, b)}{attr('reset')}")
         print(f"{a} * {b} = {calculator.multiply(a, b)}",file=f)
 
 def division(f):
         print("**divide**")
-        a = int(input("--> "))
-        b = int(input("/   "))
+        a = float(input("--> "))
+        b = float(input("/   "))
         print(f"{fg('blue')}{calculator.divide(a, b)}{attr('reset')}")
         print(f"{a} / {b} = {calculator.divide(a, b)}",file=f)
 
 def squared(f):
         print("**square**")
-        a = int(input("--> "))
+        a = float(input("--> "))
         print(f"{fg('blue')}{calculator.square(a)}{attr('reset')}")
         print(f"{a} * {a} = {calculator.square(a)}",file=f)
 
 def cubed(f):
         print("**cube**")
-        a = int(input("--> "))
+        a = float(input("--> "))
         print(f"{fg('blue')}{calculator.cube(a)}{attr('reset')}")
-        print(f"{a} * {a} * {a} = {calculator.cubed(a)}",file=f)
+        print(f"{a} * {a} * {a} = {calculator.cube(a)}",file=f)
 
 def power(f):
         print("**power**")
-        a = int(input("--> "))
-        b = int(input("^   "))
+        a = float(input("--> "))
+        b = float(input("^   "))
         print(f"{fg('blue')}{pow(a,b)}{attr('reset')}")
         print(f"{a} ^ {b}  = {pow(a,b)}",file=f)
 
 def simple(f):
         print("**simple**")
-        a = int(input("Principle = "))
-        b = int(input("Rate  =     "))
-        c = int(input("Time  =     "))
+        a = float(input("Principle = "))
+        b = float(input("Rate  =     "))
+        c = float(input("Time  =     "))
         print(calculator.simple_interest(a,b,c))
         print(f"{fg('blue')}{calculator.simple_interest(a,b,c)}{attr('reset')}")
         print(f"Principle = {a} Rate = {b} Time = {c} Interest Total = {calculator.simple_interest(a,b,c)}",file=f)
@@ -67,9 +67,9 @@ def simple(f):
 
 def compound(f):
         print("**compound**")
-        a = int(input("Principle = "))
-        b = int(input("Rate  =     "))
-        c = int(input("Time  =     "))
+        a = float(input("Principle = "))
+        b = float(input("Rate  =     "))
+        c = float(input("Time  =     "))
         print(f"{fg('blue')}{calculator.compound_interest(a,b,c)}{attr('reset')}")
         print(f"Principle = {a} Rate = {b} Time = {c} Interest Total = {calculator.compound_interest(a,b,c)}",file=f)
 
@@ -102,15 +102,15 @@ def equation(f):
         #we have to allow for an empty variable in the case of only 1 or 2 of x,y,z
         #better still lets use regex
         try:
-            if 'x' in expr: a = int(input("Solve for x = "))
+            if 'x' in expr: a = float(input("Solve for x = "))
         except ValueError as e: pass    
         
         try:
-            if 'y' in expr:b = int(input("Solve for y = "))
+            if 'y' in expr:b = float(input("Solve for y = "))
         except ValueError as e: pass  
         
         try:   
-            if 'z' in expr:c = int(input("Solve for z = "))
+            if 'z' in expr:c = float(input("Solve for z = "))
         except ValueError as e: pass  
 
         #Although it can use other values
