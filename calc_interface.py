@@ -72,4 +72,4 @@ def fibonacci(f):
         length = int(input("Enter length of sequence : "))
         num = int(input("Enter number : "))
 
-        print(calculator.fibonacci_of(num) for n in range(length))
+        print([calculator.fibonacci_of(num) for n in range(length)])
