@@ -3,6 +3,7 @@ from colored import fg,bg, attr
 from fibonacci import Fibonacci
 from game import Game
 from equation import Equation
+import re
 
 a_game = Game()
 
@@ -88,24 +89,34 @@ def guess_game(f):
         #print(a_game(guess),file=f)
 
 def equation(f):
+
         print("***Linear Equation***")
         expr = input("Please enter your equation for x,y and z :")
         a,b,c = ['','','']
+        a = re.search(r"x",expr)
+
+
+
+        
+        #we have to allow for an empty variable in the case of only 1 or 2 of x,y,z
+        #better still lets use regex
+        try:
+            if 'x' in expr:
+                a = int(input("Solve for x = "))
+        except ValueError as e: pass    
         
         try:
-                a = int(input("Solve for x = "))
-        except ValueError:
-                pass
-        try:
-                b = int(input("Solve for y = "))
-        except ValueError:
-                pass
-        try:
-                c = int(input("Solve for z = "))
-        except ValueError as e:
-                pass
-
+            if 'y' in expr:b = int(input("Solve for y = "))
+        except ValueError as e: pass  
+        
+        try:   
+            if 'z' in expr:c = int(input("Solve for z = "))
+        except ValueError as e: pass  
+         
+        
+        #use our OOP Equation class which does the validation.
         e = Equation()
         print(f"{fg('blue')}{e(expr,a,b,c)}{attr('reset')}")
+        #print nice for file
         print(f"{expr} =\n x = {a}\n y = {b}\n z ={c} \n = {e(expr,a,b,c)}",file=f)
 

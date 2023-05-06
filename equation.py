@@ -3,6 +3,8 @@ import re
 
 x,y,z = symbols('x y z')
 
+#make this a bit easier to run in the interface, does parsing and sympy setup
+
 class Equation:
     def __init__(self):
         pass
