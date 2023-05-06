@@ -82,6 +82,10 @@ try:
         except SyntaxError as e:
             print("Invalid format try 2*x + 6*y - 10*z " + str(e))
             input("Press a key to continue...")
+
+        except FileNotFoundError as e:
+            print("File format issue " + str(e))
+            input("Press a key to continue...")
             
 
 except KeyboardInterrupt:

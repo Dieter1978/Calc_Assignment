@@ -93,16 +93,15 @@ def equation(f):
         print("***Linear Equation***")
         expr = input("Please enter your equation for x,y and z :")
         a,b,c = ['','','']
-        a = re.search(r"x",expr)
+        # valid = re.search(r"x*|y*|z*|\d*",expr)
 
-
+        # if not valid: raise ValueError("bad equation")
 
         
         #we have to allow for an empty variable in the case of only 1 or 2 of x,y,z
         #better still lets use regex
         try:
-            if 'x' in expr:
-                a = int(input("Solve for x = "))
+            if 'x' in expr: a = int(input("Solve for x = "))
         except ValueError as e: pass    
         
         try:
@@ -112,7 +111,10 @@ def equation(f):
         try:   
             if 'z' in expr:c = int(input("Solve for z = "))
         except ValueError as e: pass  
-         
+
+        #Although it can use other values
+        #Although it will confused the user so crash out to except
+        if not a and not b and not c: raise ValueError("bad equation use 5*x + 9*y - 9*z")
         
         #use our OOP Equation class which does the validation.
         e = Equation()
