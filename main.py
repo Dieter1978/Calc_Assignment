@@ -45,7 +45,7 @@ try:
         try:  
             #code for seting up a file to write to  
             if not namefile:
-                filename = input("Would you like to write to a file y/n ? ")
+                filename = input(f"{fg('green')}Would you like to write to a file y/n ? {attr('reset')}")
                 if filename == "y":
                         filename = input("Enter filename : ")
                         validate_filename(filename)
@@ -56,7 +56,7 @@ try:
                         namefile = False           
 
             #setup for validation for input   
-            choice =  input(f"{fg('white')}{bg('yellow')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
+            choice =  input(f"{fg('green')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
         
             if choice.lower() == 'q': raise KeyboardInterrupt
         

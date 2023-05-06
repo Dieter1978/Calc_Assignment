@@ -72,4 +72,4 @@ def fibonacci(f):
         length = int(input("Enter range of sequence : "))
         fib = Fibonacci()
 
-        print([fib(n) for n in range(length)])
+        print(f"{fg('blue')}{[fib(n) for n in range(length)]}{attr('reset')}")
