@@ -66,3 +66,10 @@ def compound(f):
         c = int(input("Time  =     "))
         print(f"{fg('blue')}{calculator.compound_interest(a,b,c)}{attr('reset')}")
         print(f"Principle = {a} Rate = {b} Time = {c} Interest Total = {calculator.compound_interest(a,b,c)}",file=f)
+
+def fibonacci(f):
+        print("**fibonacci**")
+        length = int(input("Enter length of sequence : "))
+        num = int(input("Enter number : "))
+
+        print(calculator.fibonacci_of(num) for n in range(length))

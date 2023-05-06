@@ -1,4 +1,4 @@
-
+cache = {0: 0, 1:1}
 
 
 def add(x,y):
@@ -27,6 +27,13 @@ def simple_interest(x,y,z):
     
 def compound_interest(x,y,z):
         return x * pow((1 + y/100),z)
+
+def fibonacci_of(num):
+        if num in cache:
+                return cache[num]
+        
+        cache[num] = fibonacci_of(num-1) + fibonacci_of(num - 2)
+        return cache[num]
     
 
     

@@ -1,4 +1,4 @@
-from calc_interface import addition, subtraction, multiplication, division, squared, cubed, power, simple, compound
+from calc_interface import addition, subtraction, multiplication, division, squared, cubed, power, simple, compound, fibonacci
 from colored import fg,bg, attr
 from datetime import datetime
 import sys
@@ -18,7 +18,8 @@ choices = [ (1,'addition'),
             (6,'cubed'),
             (7,'power'),
             (8,'simple'),
-            (9,'compound')
+            (9,'compound'),
+            (10,'fibonacci'),
            
         ]
 
@@ -35,6 +36,7 @@ try:
         print("7. To the power")    
         print("8. Simple interest")
         print("9. Compound interest")
+        print("10. Fibonacci Sequence")
         print(f"{fg('red')}#########################################{attr('reset')}")
 
         
