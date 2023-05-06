@@ -95,6 +95,6 @@ def equation(f):
         c = int(input("Solve for z = "))
 
         e = Equation()
-        print(e(expr,a,b,c))
-
+        print(f"{fg('blue')}{e(expr,a,b,c)}{attr('reset')}")
+        print(f"{expr} = {e(expr,a,b,c)}",file=f)
 
