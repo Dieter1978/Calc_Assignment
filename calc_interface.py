@@ -1,6 +1,10 @@
 import calculator
 from colored import fg,bg, attr
 from fibonacci import Fibonacci
+from game import Game
+from equation import Equation
+
+a_game = Game()
 
 def addition(f):
         print("**add**")
@@ -74,3 +78,23 @@ def fibonacci(f):
 
         print(f"{fg('blue')}{[fib(n) for n in range(length)]}{attr('reset')}")
         print(f"{[fib(n) for n in range(length)]}",file=f)
+
+def guess_game(f):
+        print("**guessing game**")
+        guess = int(input("Guess the number [1-10] : "))
+
+        print(a_game(guess))
+        #no need for printing to file
+        #print(a_game(guess),file=f)
+
+def equation(f):
+        print("***Linear Equation***")
+        expr = input("Please enter your equation for x,y and z :")
+        a = int(input("Solve for x = "))
+        b = int(input("Solve for y = "))
+        c = int(input("Solve for z = "))
+
+        e = Equation()
+        print(e(expr,a,b,c))
+
+
