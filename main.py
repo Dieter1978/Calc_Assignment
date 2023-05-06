@@ -54,12 +54,12 @@ try:
         
             if not choice.isdigit(): raise ValueError("Please enter a number")
 
-            c = int(choice)
-
-            if c > 9: raise ValueError("Selected item not on menu")
+            value = int(choice)
+            values = range(1,9)
+            if value not in values : raise ValueError("Selected item not on menu")
 
             with open(f'{filename}', 'a') as f:  
-                globals()[choices[c-1][1]](f)
+                globals()[choices[value-1][1]](f)
                 input("Press a key to continue...")
 
         except ValueError as e:
