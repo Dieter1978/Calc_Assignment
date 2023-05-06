@@ -90,9 +90,20 @@ def guess_game(f):
 def equation(f):
         print("***Linear Equation***")
         expr = input("Please enter your equation for x,y and z :")
-        a = int(input("Solve for x = "))
-        b = int(input("Solve for y = "))
-        c = int(input("Solve for z = "))
+        a,b,c = ['','','']
+        
+        try:
+                a = int(input("Solve for x = "))
+        except ValueError:
+                pass
+        try:
+                b = int(input("Solve for y = "))
+        except ValueError:
+                pass
+        try:
+                c = int(input("Solve for z = "))
+        except ValueError as e:
+                pass
 
         e = Equation()
         print(f"{fg('blue')}{e(expr,a,b,c)}{attr('reset')}")
