@@ -48,7 +48,9 @@ try:
                         validate_filename(filename)
                         namefile = True
                 elif filename == "n":
-                        namefile = False       
+                        namefile = False 
+                else:
+                        namefile = False           
                 
             choice =  input(f"{fg('white')}{bg('yellow')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
         
@@ -57,7 +59,7 @@ try:
             if not choice.isdigit(): raise ValueError("Please enter a number")
 
             value = int(choice)
-            values = range(1,9)
+            values = range(1,11)
             if value not in values : raise ValueError("Selected item not on menu")
 
             with open(f'{filename}', 'a') as f:  
