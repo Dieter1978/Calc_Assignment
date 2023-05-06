@@ -96,5 +96,5 @@ def equation(f):
 
         e = Equation()
         print(f"{fg('blue')}{e(expr,a,b,c)}{attr('reset')}")
-        print(f"{expr} = {e(expr,a,b,c)}",file=f)
+        print(f"{expr} =\n x = {a}\n y = {b}\n z ={c} \n = {e(expr,a,b,c)}",file=f)
 
