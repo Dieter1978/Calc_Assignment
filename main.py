@@ -22,7 +22,7 @@ choices = [ (1,'addition'),
             (9,'compound'),
             (10,'fibonacci'),
             (11,'guess_game'),
-            (12,'Equation'),
+            (12,'equation'),
            
         ]
 
@@ -42,6 +42,7 @@ try:
         print("9. Compound interest")
         print("10.Fibonacci Sequence")
         print("11.Guessing Game")
+        print("12.Equation")
         print(f"{fg(135)}#########################################{attr('reset')}")
 
         
@@ -66,7 +67,7 @@ try:
             if not choice.isdigit(): raise ValueError("Please enter a number")
 
             value = int(choice)
-            values = range(1,12)
+            values = range(1,13)
             if value not in values : raise ValueError("Selected item not on menu")
 
             with open(f'{filename}', 'a') as f:  
@@ -76,6 +77,10 @@ try:
 
         except ValueError as e:
             print("Invalid input " + str(e))
+            input("Press a key to continue...")
+        
+        except SyntaxError as e:
+            print("Invalid format try 2*x + 6*y - 10*z " + str(e))
             input("Press a key to continue...")
             
 

@@ -8,7 +8,9 @@ class Equation:
         pass
 
     def __call__(self,expr,a,b,c):
+      
        expression = parse_expr(expr)
+    
        return expression.subs(x,a).subs(y,b).subs(z,c)
     
 
