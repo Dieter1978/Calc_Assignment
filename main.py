@@ -28,7 +28,7 @@ try:
     while True:
         #create menu system for user
         print(f"{fg('white')}{bg('yellow')}**** Welcome to Calcy the Calculator.****{attr('reset')}")
-        print(f"{fg('red')}###########{dt_string}###########{attr('reset')}")
+        print(f"{fg(135)}###########{dt_string}###########{attr('reset')}")
         print("1. Addition")
         print("2. Subtraction")
         print("3. Multiplication")
@@ -38,14 +38,14 @@ try:
         print("7. To the power")    
         print("8. Simple interest")
         print("9. Compound interest")
-        print("10. Fibonacci Sequence")
-        print(f"{fg('red')}#########################################{attr('reset')}")
+        print("10.Fibonacci Sequence")
+        print(f"{fg(135)}#########################################{attr('reset')}")
 
         
         try:  
             #code for seting up a file to write to  
             if not namefile:
-                filename = input(f"{fg('green')}Would you like to write to a file y/n ? {attr('reset')}")
+                filename = input(f"{fg(253)}Would you like to write to a file y/n ? {attr('reset')}")
                 if filename == "y":
                         filename = input("Enter filename : ")
                         validate_filename(filename)
@@ -56,7 +56,7 @@ try:
                         namefile = False           
 
             #setup for validation for input   
-            choice =  input(f"{fg('green')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
+            choice =  input(f"{fg(253)}Please choose a function to calculate,'q' to quit : {attr('reset')}")
         
             if choice.lower() == 'q': raise KeyboardInterrupt
         
@@ -77,7 +77,7 @@ try:
             
 
 except KeyboardInterrupt:
-    print("Thanks for using Calcy")    
+    print(f"{fg('white')}{bg('yellow')}********* Thanks for using Calcy ********{attr('reset')}")    
 
     
 # Calculator interface

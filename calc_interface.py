@@ -73,3 +73,4 @@ def fibonacci(f):
         fib = Fibonacci()
 
         print(f"{fg('blue')}{[fib(n) for n in range(length)]}{attr('reset')}")
+        print(f"{[fib(n) for n in range(length)]}",file=f)
