@@ -1,6 +1,6 @@
 import calculator
 from colored import fg,bg, attr
-
+from fibonacci import Fibonacci
 
 def addition(f):
         print("**add**")
@@ -69,7 +69,7 @@ def compound(f):
 
 def fibonacci(f):
         print("**fibonacci**")
-        length = int(input("Enter length of sequence : "))
-        num = int(input("Enter number : "))
+        length = int(input("Enter range of sequence : "))
+        fib = Fibonacci()
 
-        print([calculator.fibonacci_of(num) for n in range(length)])
+        print([fib(n) for n in range(length)])

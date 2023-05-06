@@ -10,6 +10,7 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 namefile = ""
 
+# set up array for calculator choices
 choices = [ (1,'addition'),
             (2,'subtraction'),
             (3,'multiplication'),
@@ -25,6 +26,7 @@ choices = [ (1,'addition'),
 
 try:
     while True:
+        #create menu system for user
         print(f"{fg('white')}{bg('yellow')}**** Welcome to Calcy the Calculator.****{attr('reset')}")
         print(f"{fg('red')}###########{dt_string}###########{attr('reset')}")
         print("1. Addition")
@@ -40,9 +42,10 @@ try:
         print(f"{fg('red')}#########################################{attr('reset')}")
 
         
-        try:    
+        try:  
+            #code for seting up a file to write to  
             if not namefile:
-                filename = input("Would you like to write to a file y/n?")
+                filename = input("Would you like to write to a file y/n ? ")
                 if filename == "y":
                         filename = input("Enter filename : ")
                         validate_filename(filename)
@@ -51,7 +54,8 @@ try:
                         namefile = False 
                 else:
                         namefile = False           
-                
+
+            #setup for validation for input   
             choice =  input(f"{fg('white')}{bg('yellow')}Please choose a function to calculate,'q' to quit : {attr('reset')}")
         
             if choice.lower() == 'q': raise KeyboardInterrupt
@@ -63,6 +67,7 @@ try:
             if value not in values : raise ValueError("Selected item not on menu")
 
             with open(f'{filename}', 'a') as f:  
+                #call the function from the global function stack
                 globals()[choices[value-1][1]](f)
                 input("Press a key to continue...")
 
@@ -70,12 +75,6 @@ try:
             print("Invalid input " + str(e))
             input("Press a key to continue...")
             
-
-
-     
-
-       
-        # calc_interface.addition()
 
 except KeyboardInterrupt:
     print("Thanks for using Calcy")    
