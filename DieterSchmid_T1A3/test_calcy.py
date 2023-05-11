@@ -1,5 +1,7 @@
 import pytest
 from calculator import add, subtract, simple_interest, multiply, divide, square, cube, compound_interest
+from calc_interface import addition, subtraction, division, equation, compound
+
 
 
 def test_add():
@@ -28,5 +30,28 @@ def test_simple_interest():
 def test_compound_interest():
     assert compound_interest(1500,5.8,10) == 2636.015356929926
 
-                           
+#def test_fibonnaci():                         
 
+def test_add(monkeypatch):
+    with pytest.raises(ValueError):
+        inputs = iter(["a","d"])
+        monkeypatch.setattr("builtins.input", lambda _:next(inputs))
+        addition('file')
+
+def test_division(monkeypatch):
+    with pytest.raises(ValueError):
+        inputs = iter([7,"d"])
+        monkeypatch.setattr("builtins.input", lambda _:next(inputs))
+        division('file')
+
+def test_compound(monkeypatch):
+    with pytest.raises(ValueError):
+        inputs = iter([10,600,"+"])
+        monkeypatch.setattr("builtins.input", lambda _:next(inputs))
+        compound('file')
+
+def test_equation(monkeypatch):
+    with pytest.raises(ValueError):
+        inputs = iter(["12x + 67y + 10z","a","b","c"])
+        monkeypatch.setattr("builtins.input", lambda _:next(inputs))
+        equation('file')

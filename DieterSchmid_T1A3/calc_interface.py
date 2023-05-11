@@ -6,6 +6,11 @@ from game import Game
 from equation import Equation
 import re
 
+
+#These functions interface with the user the print to the console and to file if the option is flagged.
+
+
+#starts a game for the whole user session.
 a_game = Game()
 
        
@@ -96,24 +101,24 @@ def equation(f):
         print("***Linear Equation***")
         expr = input("Please enter your equation for x,y and z :")
         a,b,c = ['','','']
-        # valid = re.search(r"x*|y*|z*|\d*",expr)
-
-        # if not valid: raise ValueError("bad equation")
-
-        
-        #we have to allow for an empty variable in the case of only 1 or 2 of x,y,z
-        #better still lets use regex
-        try:
-            if 'x' in expr: a = float(input("Solve for x = "))
-        except ValueError as e: pass    
         
         try:
-            if 'y' in expr:b = float(input("Solve for y = "))
-        except ValueError as e: pass  
+            if 'x' in expr: 
+                a = float(input("Solve for x = "))
+        except ValueError as e: 
+                pass    
+        
+        try:
+            if 'y' in expr:
+                b = float(input("Solve for y = "))
+        except ValueError as e: 
+                pass  
         
         try:   
-            if 'z' in expr:c = float(input("Solve for z = "))
-        except ValueError as e: pass  
+            if 'z' in expr:
+                c = float(input("Solve for z = "))
+        except ValueError as e: 
+                pass  
 
         #Although it can use other values
         #Although it will confused the user so crash out to except
