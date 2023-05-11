@@ -2,7 +2,7 @@
 
 A calulator program developed in python for the Terminal.
 
-##sources
+## sources
 
 Chan, L. (2022). How To Call a Python Function With A String? [online] Medium. Available at: https://pub.towardsai.net/python-trick-how-to-call-a-function-by-its-name-f35309469c66.
 
@@ -12,7 +12,7 @@ Stack Abuse. (n.d.). Writing to a File with Python’s print() Function. [online
 
 simpy.readthedocs.io. (n.d.). Overview — SimPy 4.0.2.dev1+g2973dbe documentation. [online] Available at: https://simpy.readthedocs.io/en/latest/.
 
-##Features
+## Features
 
 - Basic Calulator functions. This program provide the ability to add, subtract, multiply, divide, square, cube as well as simple interest and compund interest functions.
 - User interface. This program provides a menu system that allows the user to select functions and print the results to screen.
