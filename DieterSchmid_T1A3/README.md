@@ -19,4 +19,9 @@ simpy.readthedocs.io. (n.d.). Overview — SimPy 4.0.2.dev1+g2973dbe documentati
 - Equations. The program is able to do linear algebra in the form of 3x + 7y -10z.
 - Guessing game. A simple to guess the number between 1 and 10.
 - File output. The program can print the results of calculations to a file. It appends to the file so that you can store a record of the session.
-  ‌
+
+## Implementation
+
+Trello was used as project management software to track build of the features.
+
+![Trello Screen Shot 1] (/DieterSchmid_T1A3/Images/Screenshot 2023-05-11 at 8.29.03 pm.png)
