@@ -25,5 +25,5 @@ simpy.readthedocs.io. (n.d.). Overview — SimPy 4.0.2.dev1+g2973dbe documentati
 Trello was used as project management software to track build of the features.
 
 ![Trello Screen Shot 1](./Images/Shot1.png)
-![Trello Screen Shot 2](./Images/Shot1.png)
-![Trello Screen Shot 3](./Images/Shot1.png)
+![Trello Screen Shot 2](./Images/Shot2.png)
+![Trello Screen Shot 3](./Images/Shot3.png)
