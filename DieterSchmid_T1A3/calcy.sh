@@ -6,6 +6,7 @@ then
     To install Python, check out https://installpython3.com/' >&2
   exit 1
 fi
+python3 -m venv venv
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
-python3 /Users/dieterschmid/projects/python/Assignment/DieterSchmid_T1A3/main.py
+python3 main.py
