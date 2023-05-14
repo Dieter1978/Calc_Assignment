@@ -22,6 +22,8 @@ simpy.readthedocs.io. (n.d.). Overview — SimPy 4.0.2.dev1+g2973dbe documentati
 
 ## Implementation
 
+Presentation can be found at : https://youtu.be/7UYNDw8YMS4
+
 Trello was used as project management software to track build of the features. The Trello board can be found here : https://trello.com/b/3fa8MKts/calcy-the-calculator-program
 
 ![Trello Screen Shot 1](./docs/Shot1.png)
