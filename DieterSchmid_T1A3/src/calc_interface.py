@@ -96,6 +96,18 @@ def guess_game(f):
         #no need for printing to file
         #print(a_game(guess),file=f)
 
+def dec_to_binary(f):
+       print("**Decimal to Binary**")
+       a = int(input("--> "))
+       print(f"{fg('blue')}{calculator.decimal_to_binary(a)}{attr('reset')}")
+       print(f"{a} * {a} = {calculator.decimal_to_binary(a)}",file=f)
+
+def dec_to_hex(f):
+       print("**Decimal to Binary**")
+       a = int(input("--> "))
+       print(f"{fg('blue')}{calculator.decimal_to_hex(a)}{attr('reset')}")
+       print(f"{a} * {a} = {calculator.decimal_to_hex(a)}",file=f)
+
 def equation(f):
 
         print("***Linear Equation***")

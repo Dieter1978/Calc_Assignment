@@ -28,6 +28,16 @@ def simple_interest(x,y,z):
 def compound_interest(x,y,z):
         return x * pow((1 + y/100),z)
 
+def decimal_to_binary(decimal):
+        bin_a = bin(decimal)
+        bin_string = f"{bin_a}"
+        return bin_string[2:]
+
+def decimal_to_hex(decimal):
+        hex_a = hex(decimal)
+        hex_string = f"{hex_a}"
+        return hex_string
+
 # def fibonacci_of(num):
 #         if num in cache:
 #                 return cache[num]

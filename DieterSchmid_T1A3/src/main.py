@@ -1,5 +1,5 @@
 
-from calc_interface import addition, guess_game,  subtraction, multiplication, division, squared, cubed, power, simple, compound, fibonacci, equation
+from calc_interface import addition, guess_game,  subtraction, multiplication, division, squared, cubed, power, simple, compound, fibonacci, equation, dec_to_binary, dec_to_hex
 from colored import fg,bg, attr
 from datetime import datetime
 import sys
@@ -26,6 +26,8 @@ choices = [ (1,'addition'),
             (10,'fibonacci'),
             (11,'guess_game'),
             (12,'equation'),
+            (13,'dec_to_binary'),
+            (14,'dec_to_hex'),
            
            
         ]
@@ -47,6 +49,8 @@ try:
         print("10.Fibonacci Sequence")
         print("11.Guessing Game")
         print("12.Equation")
+        print("13.Decimal to Binary")
+        print("14.Decimal to Hexidecimal")
         print(f"{fg(135)}#########################################{attr('reset')}")
 
         
@@ -72,7 +76,7 @@ try:
             if not choice.isdigit(): raise ValueError("Please enter a number")
 
             value = int(choice)
-            values = range(1,13)
+            values = range(1,15)
             if value not in values : raise ValueError("Selected item not on menu")
 
             if namefile: 
